@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale = 1">
+    <meta charset="utf-8">
+    <title>Magic animals</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="styleshee" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+  </head>
+    <style>
+     
+      
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: arial;
+  }
+  * a{
+    text-decoration: none;
+}
+* li{
+  list-style: none;
+}
+  .container{
+      position: relative;
+      min-height: 100vh;
+  
+  }
+  .bg{
+      width: 100%;
+      height: 100%;
+      position: relative;
+  }
+  .bg::after{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:url(https://free4kwallpapers.com/uploads/originals/2021/07/23/magic-forest-wallpaper.jpg) ;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(70%);
+}
+.menu {
+    position: relative;
+    width: 85%;
+    height: 15vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.logo a{
+    font-size: 2.5rem;
+    color: rgb(194, 148, 148);
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+    }
+.menu ul li{
+    padding: 0 17px;
+}
+.menu ul li a{
+    font-weight:bold ;
+    color: #ffffff;
+    font-size: 14px;
+} 
+
+/*.content{
+    width: 85% ;
+    margin: auto;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    display: flex;
+}
+*/
+/*.content .header,.grid-card{
+    width: 50%;
+    position: relative;
+}
+*/
+.content .header{
+    color: #ffffff;
+    padding: 100px;
+    margin:0 auto;
+  
+}
+.content .header h2{
+    font-size: 3rem;
+    letter-spacing: 2px;
+   
+}
+.content .header h2 i{
+    color: rgb(88, 133, 139);
+}
+.content .header h1{
+    font-size:2rem ;
+}
+.content .header p{
+    opacity: .7;
+}
+/*.grid-card{
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-gap: 25px;
+}
+.grid-card .box {
+    width: 100%;
+    height: 300px;
+   position: relative;
+    background-position: center;
+    background-size: cover;
+    border-radius: 25px;
+    transition: .4s;
+}
+.bg1{
+    background-image: url(https://media.thairath.co.th/image/KFb42CQDp1V2KQjwDr0AkToHm1ETZKp1V28uB0s1a2hkuPqXXlFaYe9vA1.jpeg);
+}
+.bg2{
+    background-image: url(https://media.thairath.co.th/image/KFb42CQDp1V2KQjwDr0AkToHinX6VyW2oURzTxehWz2nwse9vA1.jpeg);
+}
+.bg3{
+    background-image: url(https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F0e62a63c-a763-11e6-89ad-c090de2d496c.jpg?crop=2667%2C1500%2C0%2C0);
+}
+
+
+
+   
+.bg4{
+    background-image: url(https://www.matichon.co.th/wp-content/uploads/2016/11/fantasticbeaststhebeasts10.jpg);
+}
+
+/*.content .box h2{ 
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #fff;
+    font-family: Sans-serif ;
+}
+
+.content .box:hover{
+    transform:translateY(-15px) ;
+}
+*/
+.header button{
+    border: solid 2px #fff;
+    background: none;
+    color: #ffffff;
+    font-size: 2.5rem;
+    padding: 5px 15px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+.header button:hover{
+    background: #fff;
+    color: #000;
+}
+.logo{
+  font-size:5rem ;
+    
+}
+
+
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+.maincontainer{
+  position: absolute;
+  width: 250px;
+  height: 320px;
+  background: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+.thecard{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  
+}
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.thecard:hover{
+  transform: rotateY(180deg);
+}
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+ .thefront{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+   color: #000;
+  background-image: url(https://i.pinimg.com/originals/73/6c/a3/736ca32dff9564696d7d5daad75d1954.jpg) ;
+  background-size: cover;
+
+}
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+.theback{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fafafa;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+  background-image: url(https://i.pinimg.com/originals/73/6c/a3/736ca32dff9564696d7d5daad75d1954.jpg) ;
+}
+
+
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+.thefront h1{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: left;
+  color: #fff;
+}
+ .theback h1{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: 30px;
+  font-size: 24px;
+  text-align:justify;
+  color:#fff;
+}
+.thefront p{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+ .theback p{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.sec p{
+  position: absolute;
+}
+
+/*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+.maincontainer2{
+  position: absolute;
+  width: 250px;
+  height: 320px;
+  background: none;
+  top: 50%;
+  left: 250%;
+  transform: translate(-50%, -50%);
+
+}
+
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+.thecard2{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  
+}
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.thecard2:hover{
+  transform: rotateY(180deg);
+}
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+ .thefront2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+   color: #000;
+  background-image: url(https://media.thairath.co.th/image/KFb42CQDp1V2KQjwDr0AkToHinX6VyW2oURzTxehWz2nwse9vA1.jpeg) ;
+  background-size: auto;
+
+}
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+.theback2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fafafa;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+  background-image: url(https://media.thairath.co.th/image/KFb42CQDp1V2KQjwDr0AkToHinX6VyW2oURzTxehWz2nwse9vA1.jpeg) ;
+}
+
+
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+.thefront2 h1{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: left;
+  color: #fff;
+}
+ .theback2 h1{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: 30px;
+  font-size: 24px;
+  text-align:justify;
+  color:#fff;
+}
+.thefront2 p{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+ .theback2 p{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.sec2 p{
+  position: absolute;
+}
+
+/*box*/
+
+/*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+
+
+/*button*/
+/*.header p button{
+  left: auto;
+    border: solid 2px #fff;
+    background: none;
+    color: #ffffff;
+    font-size: 2.5rem;
+    padding: 5px 15px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+.header p  button:hover{
+    background: #fff;
+    color: #000;
+}*/
+
+</style>
+  </head>
+  
+ <div class="container bg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+   <div class="menu">
+ <div class="logo">
+  <i class="fa-solid fa-otter" style="color: #ffffff;"></i>
+  
+ </div>
+    <ul>
+      <li><a href="http://127.0.0.1:5500/Index.html#"><i class="bi bi-house"></i>Home</a></li>
+      
+      <li><a href="http://127.0.0.1:5500/page2.html"><i class="bi bi-person-circle"></i>about</a></li>
+      <li><a href="http://127.0.0.1:5500/page4.html"><i class="bi bi-envelope"></i>contact</a>></li>
+    </ul>
+</div>
+
+
+
+<body>
+<div class="content">
+  <div class="header">
+    
+   <h2><i class="fa-solid fa-wand-sparkles fa-bounce" style="color: #d5d6d8;"></i>Magic Animals</h2>
+    <h1>สัตว์วิเศษ</h1>
+    
+    <p> สวัสดีครับวันนี้จะพาไปรู้จักสัตว์มหัศจรรย์ของ'Fantastic Beasts and Where to Find Them’ </p>
+    <button>Let's go!</button>
+    
+  </div>
+  
+  <div class="maincontainer">
+    
+    <div class="thecard">
+      
+      <div class="thefront"><h1>Niffler</h1><p></p></div>
+      <div class="sec"><p><img src="images/img1.png.png"></p></div>
+      <div class="theback"><h1>Niffler</h1><p>นิฟเฟลอร์แสนซนเป็นสัตว์ตัวเล็กมีขนสีดำและจมูกกลมยาวทำให้มันดูเหมือนตัวตุ่นผสมกับตุ่นปากเป็ด </p>
+     <div class="link">
+      <a href="https://youtu.be/3Ap-20xobGU" ><h6 style="color:Tomato;"></h9><i class="bi bi-youtube"></i>ข้อมูลเพิ่มเติม </h6></a>
+     </div>
+    </div>
+  </div>
+
+</body>
+  
+
+<div class="maincontainer2">
+    
+  <div class="thecard2">
+    
+    <div class="thefront2"><h1>Bowtruckle</h1><p></p></div>
+    <div class="sec2"><p><img src="images/img2.png.png"></p></div>
+    <div class="theback2"><h1>Bowtruckle</h1><p>โบวทรัลเกิลเป็นสัตว์ที่มีหน้าตาเหมือนกิ่งไม้ ในสภาพแวดล้อมตามธรรมชาติเราจะหาตัวมันได้ยากมาก เพราะมันไม่เพียงมีขนาดเล็กแต่ยังกลมกลืนไปกับบรรดาพุ่มไม้ใบหญ้าอีกด้วย  </p>
+   <div class="link">
+    <a href="https://youtu.be/G_xmqm8tMnc" ><h6 style="color:Tomato;"><i class="bi bi-youtube"></i>ข้อมูลเพิ่มเติม </h6></a>
+   </div>
+  </div>
+</div>
+
+
+
+</body>
+
+
+
+   
+
+</html>

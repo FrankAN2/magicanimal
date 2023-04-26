@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>dark and light</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+        <link rel="styleshee" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    </head>
+    <style>
+*{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    height: 50;
+    width: 100px; ;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2b2b2b;
+    /*transition: 0.5s;*/
+}
+body.active
+{
+    background-color: #f8f8f8;
+
+}
+
+
+#toggle 
+{
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 40px;
+    border-radius: 50px;
+    background: #222;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: inset 0 8px 60px rgba(0,0,0,0.1),
+                inset 0 8px 8px rgba(0,0,0,0.1),
+                inset 0 -4px 4px rgba(0,0,0,0.1),
+
+}
+
+#toggle.active{
+    background: #fff;
+    box-shadow: inset 0 2px 60px rgba(0,0,0,0.1),
+                inset 0 2px 8px rgba(0,0,0,0.1),
+                inset 0 -4px 4px rgba(0,0,0,0.5),
+}
+
+#toggle .indicator
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(to bottom,#444,#222);
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow:0 8px 40px rgba(0,0,0,0.5),
+                inset 0 4px 4px rgba(225,225,225,0.2),
+                inset 0 -4px 4px rgba(225,225,225,0.2);
+    transition: 0.5s;
+                
+
+}
+#toggle.active .indicator{
+    left: 30px;
+    background: linear-gradient(to bottom,#eaeaea,#f9f9f9);
+    box-shadow:0 8px 20px rgba(0,0,0,0.1),
+                inset 0 4px 4px rgba(225,225,225,1),
+                inset 0 -4px 4px rgba(225,225,225,1);
+
+}
+
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+.maincontainer2{
+  position: absolute;
+  width: 250px;
+  height: 320px;
+  background: none;
+  top: 50%;
+  left: 250%;
+  transform: translate(-50%, -50%);
+
+}
+
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+.thecard2{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  
+}
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.thecard2:hover{
+  transform: rotateY(180deg);
+}
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+ .thefront2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+   color: #000;
+  background-image: url(https://media.thairath.co.th/image/KFb42CQDp1V2KQjwDr0AkToHinX6VyW2oURzTxehWz2nwse9vA1.jpeg) ;
+  background-size: auto;
+
+}
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+.theback2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fafafa;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+  background-image: url(https://media.thairath.co.th/image/KFb42CQDp1V2KQjwDr0AkToHinX6VyW2oURzTxehWz2nwse9vA1.jpeg) ;
+}
+
+
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+.thefront2 h1{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: left;
+  color: #fff;
+}
+ .theback2 h1{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: 30px;
+  font-size: 24px;
+  text-align:justify;
+  color:#fff;
+}
+.thefront2 p{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+ .theback2 p{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.sec2 p{
+  position: absolute;
+}
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: arial;
+  }
+  * a{
+    text-decoration: none;
+}
+* li{
+  list-style: none;
+}
+  .container{
+      position: relative;
+      min-height: 100vh;
+      align-items: center;
+    }
+.menu {
+    position: relative;
+    width: 85%;
+    height: 15vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.logo a{
+    font-size: 2.5rem;
+    color: rgb(194, 148, 148);
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+    }
+.menu ul li{
+    padding: 100px 17px;
+}
+.menu ul li a{
+    font-weight:bold ;
+    color: #dbcae2;
+    font-size: 14px;
+} 
+.content .header{
+    color: #31337c;
+    padding: 100px;
+    margin:0 auto;
+    width: 100px;
+    height: 30vh;
+  
+}
+.content .header h2{
+    font-size: 3rem;
+    letter-spacing: 2px;
+   
+}
+.content .header h2 i{
+    color: rgb(88, 133, 139);
+}
+.content .header h1{
+    font-size:2rem ;
+}
+.content .header p{
+    opacity: .7;
+}
+
+.content .header{
+    color: #c43b6b;
+    padding: 100px;
+    margin: auto;
+  
+}
+    </style>
+    <div class="container bg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      
+       <div class="menu">
+     <div class="logo">
+     
+      
+     </div>
+        <ul>
+          <li><a href="http://127.0.0.1:5500/Index.html#"><i class="bi bi-house"></i>Home</a></li>
+          
+          <li><a href="http://127.0.0.1:5500/page2.html"><i class="bi bi-person-circle"></i>about</a></li>
+          <li><a href="http://127.0.0.1:5500/page4.html"><i class="bi bi-envelope"></i>contact</a></li>
+        </ul>
+    </div>
+    
+    
+    
+    <body>
+    <div class="content">
+      <div class="header">
+        
+       <h2><i class="fa-regular fa-address-card" style="color: #ef2525;"></i>My contact</h2>
+        <h1>ช่องทางติดต่อ</h1>
+        
+        <p><i class="fa-brands fa-instagram"></i>instagram _frvnkx</p>
+        
+        
+      </div>
+<body>
+    <div id="toggle">
+        <i class="indicator"></i>
+    </div>
+    <script>
+        const body = document.querySelector('body');
+        const toggle = document.getElementById('toggle');
+        toggle.onclick = function(){
+            toggle.classList.toggle('active');
+            body.classList.toggle('active');
+        }
+        
+        
+    </script>
+
+
+</html>
